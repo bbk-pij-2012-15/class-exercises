@@ -32,15 +32,7 @@ if (consecutive == true && failsafe == true)
 {
     print "Yes"
 }
-else if (consecutive == false && failsafe == true)
-{
-    print "confalse"
-}
 else if (consecutive == true && failsafe == false)
 {
-    print "failfalse"
-}
-else if (consecutive == false && failsafe == false)
-{
-    print "allfalse"
+    print "No"
 }
