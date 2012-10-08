@@ -2,6 +2,7 @@ String str = 0
 int x, prevx, valid = 0
 boolean consecutive, done = false
 boolean failsafe = true
+boolean firstrun = true
 
 while (!done)
 {
@@ -19,10 +20,12 @@ while (!done)
     {
         consecutive = true
     }
-    else
+    else if (firstrun = false)
     {
         failsafe = false
     }
+    
+    firstrun = false
 }
 
 if (consecutive == true && failsafe == true)
