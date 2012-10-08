@@ -20,7 +20,7 @@ while (!done)
     {
         consecutive = true
     }
-    else if (firstrun = false)
+    else if (firstrun == false)
     {
         failsafe = false
     }
