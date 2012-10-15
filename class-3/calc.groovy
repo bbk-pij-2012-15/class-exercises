@@ -1,3 +1,4 @@
+double answer
 println "calculator v0.1"
 print "Please enter two numbers, separated by pressing <ENTER>"
 String inputOne = System.console().readLine()
@@ -12,19 +13,19 @@ int operation = Integer.parseInt(choice)
 
 if (operation == 1)
 {
-	double answer = (numberOne + numberTwo)
+	answer = (numberOne + numberTwo)
 }
 else if (operation == 2)
 {
-	double answer = (numberOne - numberTwo)
+	answer = (numberOne - numberTwo)
 }
 else if (operation == 3)
 {
-	double answer = (numberOne / numberTwo)
+	answer = (numberOne / numberTwo)
 }
 else if (operation == 4)
 {
-	double answer = (numberOne * numberTwo)
+	answer = (numberOne * numberTwo)
 }
 else
 {
