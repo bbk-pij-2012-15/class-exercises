@@ -26,7 +26,10 @@ if (sum.contains("/"))
 	int operatorPosition = sum.indexOf("/")
 }
 
-double number2 = sum.substring(operatorPosition)
+String num2 = sum.substring(operatorPosition + 1)
+double numberTwo = Double.parseDouble(num2)
+String num1 = sum.substring(0, operatorPosition)
+double numberOne = Double.parseDouble(num1)
 
 
 int sumSize = sum.size()
