@@ -2,7 +2,7 @@ validRanks = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" 
 validSuits = [ "H", "D", "C", "S" ]
 String card1, card2, card3, card4, card5 = null
 String unverifiedRank, unverifiedSuit, unverifiedCard, validRank, validSuit
-int count = 1
+int count = 1                                           // this variable will be used to always show the right card number
 boolean suit, rank = false
 
 /////////////////////////////////////////////////////VALIDITY CHECKS START/////////////////////////////////////////////////////////////
