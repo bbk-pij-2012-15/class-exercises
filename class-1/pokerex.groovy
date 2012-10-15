@@ -19,6 +19,7 @@ if (validRanks.contains(unverifiedRank))
 else 
     {
     print "invalid rank. input must be in range [12345678910JQKA]. Quit and start again"
+    System.exit(1)
     }
 if (validSuits.contains(unverifiedSuit))
     {  
@@ -28,11 +29,14 @@ if (validSuits.contains(unverifiedSuit))
 else 
     {
     print "invalid suit. input must be in range [HDCS]. Quit and start again"
+    System.exit(1)
     }
 
     if (suit == true && rank == true)
         {
          card1 = "$validRank$validSuit"
+         rank1 = validRank
+         suit1 = validSuit
          count = count + 1
         }
         
@@ -48,6 +52,7 @@ if (validRanks.contains(unverifiedRank))
 else 
     {
     print "invalid rank. input must be in range [12345678910JQKA]. Quit and start again"
+    System.exit(1)
     }
 if (validSuits.contains(unverifiedSuit))
     {  
@@ -57,11 +62,14 @@ if (validSuits.contains(unverifiedSuit))
 else 
     {
     print "invalid suit. input must be in range [HDCS]. Quit and start again"
+    System.exit(1)
     }
 
     if (suit == true && rank == true)
         {
          card2 = "$validRank$validSuit"
+         rank2 = validRank
+         suit2 = validSuit
          count = count + 1
         }
         
@@ -77,6 +85,7 @@ if (validRanks.contains(unverifiedRank))
 else 
     {
     print "invalid rank. input must be in range [12345678910JQKA]. Quit and start again"
+    System.exit(1)
     }
 if (validSuits.contains(unverifiedSuit))
     {  
@@ -86,11 +95,14 @@ if (validSuits.contains(unverifiedSuit))
 else 
     {
     print "invalid suit. input must be in range [HDCS]. Quit and start again"
+    System.exit(1)
     }
 
     if (suit == true && rank == true)
         {
          card3 = "$validRank$validSuit"
+         rank3 = validRank
+         suit3 = validSuit
          count = count + 1
         }
         
@@ -106,6 +118,7 @@ if (validRanks.contains(unverifiedRank))
 else 
     {
     print "invalid rank. input must be in range [12345678910JQKA]. Quit and start again"
+    System.exit(1)
     }
 if (validSuits.contains(unverifiedSuit))
     {  
@@ -115,11 +128,14 @@ if (validSuits.contains(unverifiedSuit))
 else 
     {
     print "invalid suit. input must be in range [HDCS]. Quit and start again"
+    System.exit(1)
     }
 
     if (suit == true && rank == true)
         {
          card4 = "$validRank$validSuit"
+         rank4 = validRank
+         suit4 = validSuit
          count = count + 1
         }
         
@@ -135,6 +151,7 @@ if (validRanks.contains(unverifiedRank))
 else 
     {
     print "invalid rank. input must be in range [12345678910JQKA]. Quit and start again"
+    System.exit(1)
     }
 if (validSuits.contains(unverifiedSuit))
     {  
@@ -144,14 +161,19 @@ if (validSuits.contains(unverifiedSuit))
 else 
     {
     print "invalid suit. input must be in range [HDCS]. Quit and start again"
+    System.exit(1)
     }
 
     if (suit == true && rank == true)
         {
          card5 = "$validRank$validSuit"
+         rank5 = validRank
+         suit5 = validSuit
          count = count + 1
         }
         
 ////////////////////////////////////////////////////////////VALIDITY CHECKS END/////////////////////////////////////////////////////////
 
 print "\t$card1\t$card2\t$card3\t$card4\t$card5"
+
+///////////////////////////////////////////////////////////NEED TO SORT CARDS//////////////////////////////////////////////////////
