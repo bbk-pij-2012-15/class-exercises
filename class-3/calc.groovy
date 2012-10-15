@@ -3,7 +3,7 @@ print "Please enter two numbers, separated by pressing <ENTER>"
 String inputOne = System.console().readLine()
 String inputTwo = System.console().readLine()
 double numberOne = Double.parseDouble(inputOne)
-double numberTwo = Double.parseIDouble(inputTwo)
+double numberTwo = Double.parseDouble(inputTwo)
 
 print "Please select an operation by typing its number and prerssing <ENTER>:"
 print "\n1 = add\n2 = subtract\n3 = divide\n 4 = multiply"
