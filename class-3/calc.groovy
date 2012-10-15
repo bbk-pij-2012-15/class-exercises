@@ -29,4 +29,5 @@ else if (operation == 4)
 else
 {
 	print "\ninvalid input. please start over and choose an operation from the range [1234]"
+	System.exit(1)
 }
