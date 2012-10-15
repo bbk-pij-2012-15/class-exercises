@@ -200,7 +200,7 @@ int int3 = Integer.parseInt(rank3)                                        //////
 int int4 = Integer.parseInt(rank4)
 int int5 = Integer.parseInt(rank5)
 
-int top, four, three, two, one                                        //////// defining some integers to store the sorted ranks
+int top, four, three, two, bottom                                       //////// defining some integers to store the sorted ranks
 unsortedList = [0,0,0,0,0] 
 unsortedList[0] = int1
 unsortedList[1] = int2
@@ -208,4 +208,20 @@ unsortedList[2] = int3
 unsortedList[3] = int4
 unsortedList[4] = int5
 sortedList = unsortedList.sort()
-print sortedList
+
+bottom = sortedList[0]
+two = sortedList[1]
+three = sortedList[2]
+four = sortedList[3]
+top = sortedList[4]
+
+if (rank1 == 13 || rank2 == 13 || rank2 == 13 || rank2 == 13 || rank2 == 13)          //this bit of code needs to check if one of the cards
+    {                                                                                // is a king, and if so, change the value of an ace
+                                                                                       // from 1 to 14
+
+//////////////////////////////////////////////////////////////////////////SORTED!////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////SEE IF HAND IS STRAIGHT FLUSH////////////////////////////////////
+
+if (two == bottom + 1 && three == two + 1 && four == three + 1 && top == four + 1)
+{print "\n\nYou have a Straight Flush!!!"}
