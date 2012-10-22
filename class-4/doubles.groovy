@@ -36,3 +36,5 @@ numberOfYears(totalToBePaid, totalBorrowed)
 print "\nThe total amount you will pay is $totalToBePaid"
 print "\nThe money you must pay every year is $moneyToBePaid"
 print "\nThe number of years before the interst is paid, and only initial capital remains is $numberOfYears"
+
+////////////////////////////////// http://www.ualberta.ca/CNS/RESEARCH/LinuxClusters/mem.html
