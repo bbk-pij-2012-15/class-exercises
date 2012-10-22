@@ -1,0 +1,121 @@
+#!/bin/bash
+# simple decimal to hexadecimal converter
+
+## Version 0.1 - just hex/dec so far, hope to add octal in next version
+
+dec2hex ()
+{ 
+ clear
+ echo "ENTER DECIMAL NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> " number
+ converted_number=$(echo "obase=16;ibase=10;$number" | bc)
+ echo "0x$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+  	exec ./base_converter
+ else 
+	clear && exit 0
+ fi
+}
+
+hex2dec ()
+{
+ clear
+ echo "ENTER HEX NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> 0x" number
+ converted_number=$(echo "obase=10;ibase=16;$number" | bc)
+ echo "$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+        exec ./base_converter
+ else
+        clear && exit 0
+ fi
+}
+
+dec2bin ()
+{ 
+ clear
+ echo "ENTER DECIMAL NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> " number
+ converted_number=$(echo "obase=2;ibase=10;$number" | bc)
+ echo "$converted_number"
+ echo "$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+        exec ./base_converter
+ else
+        clear && exit 0
+ fi
+}
+
+hex2bin ()
+{
+ clear
+ echo "ENTER HEX NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> 0x" number
+ converted_number=$(echo "obase=2;ibase=16;$number" | bc)
+ echo "$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+        exec ./base_converter
+ else
+        clear && exit 0
+ fi
+}
+
+bin2dec ()
+{ 
+ clear
+ echo "ENTER BINARY NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> " number
+ converted_number=$(echo "obase=10;ibase=2;$number" | bc)
+ echo "$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+        exec ./base_converter
+ else
+        clear && exit 0
+ fi
+}
+
+bin2hex ()
+{ 
+ clear
+ echo "ENTER BINARY NUMBER AND PRESS ENTER TO CONVERT"
+ read -p "==> " number
+ converted_number=$(echo "obase=16;ibase=2;$number" | bc)
+ echo "0x$converted_number"
+ echo -e "\nWould you like to convert another? [y/n]"
+ read response
+ if [ $response == "y" ]; then
+        exec ./base_converter
+ else
+        clear && exit 0
+ fi
+}
+
+################################# START OF ACTUAL PROGRAM ####################
+
+read -p "Input Base = " inbase
+read -p "Output Base = " outbase
+
+if [[ $inbase == 10 && $outbase == 16 ]]; then
+	dec2hex
+elif [[ $inbase == 16 && $outbase == 10 ]]; then
+	hex2dec
+elif [[ $inbase == 10 && $outbase == 2 ]]; then
+	dec2bin
+elif [[ $inbase == 16 && $outbase == 2 ]]; then
+	hex2bin
+elif [[ $inbase == 2 && $outbase == 10 ]]; then
+	bin2dec
+elif [[ $inbase == 2 && $outbase == 16 ]]; then
+	bin2hex
+else echo "I only know binary, decimal and hexadecimal" && exec ./converters/base_converter
+fi

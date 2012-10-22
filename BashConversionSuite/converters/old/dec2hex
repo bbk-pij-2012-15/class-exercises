@@ -1,0 +1,22 @@
+#!/bin/bash
+# simple decimal to hexadecimal converter
+
+clear
+
+echo "ENTER DECIMAL NUMBER AND PRESS ENTER TO CONVERT"
+
+read -p "==> " number
+
+converted_number=$(echo "ibase=10;obase=16;$number" | bc)
+
+echo "0x$converted_number"
+
+echo -e "\nWould you like to convert another? [y/n]"
+
+read response
+
+if [ $response == "y" ]; then
+	exec ./dec2hex
+else 
+	clear && exit 0
+fi

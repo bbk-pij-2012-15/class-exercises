@@ -1,0 +1,142 @@
+#!/bin/bash
+# v0.1 - dollar, euro and pound only
+
+clear
+
+echo "###### CURRENCY CONVERTER  v0.1 ######"
+
+dollar2pound ()
+{
+echo "ENTER VALUE IN U.S. DOLLARS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=usd&to=gbp&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+pound2dollar ()
+{
+echo "ENTER VALUE IN POUNDS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=gbp&to=usd&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+dollar2euro ()
+{
+echo "ENTER VALUE IN U.S. DOLLARS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=usd&to=eur&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+pound2euro ()
+{
+echo "ENTER VALUE IN POUNDS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=gbp&to=eur&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+euro2dollar ()
+{
+echo "ENTER VALUE IN EUROS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=eur&to=usd&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+euro2pound ()
+{
+echo "ENTER VALUE IN EUROS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=eur&to=gbp&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+yen2pound ()
+{
+echo "ENTER VALUE IN YEN AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=jpy&to=gbp&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+yen2dollar ()
+{
+echo "ENTER VALUE IN YEN AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=jpy&to=usd&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+yen2euro ()
+{
+echo "ENTER VALUE IN YEN AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=jpy&to=eur&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+pound2yen ()
+{
+echo "ENTER VALUE IN POUNDS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=gbp&to=jpy&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+euro2yen ()
+{
+echo "ENTER VALUE IN EUROS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=eur&to=jpy&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+dollar2yen ()
+{
+echo "ENTER VALUE IN U.S. DOLLARS AND PRESS ENTER TO CONVERT"
+read -p "==> " amount
+converted_amount=$(wget -qO- "http://www.google.com/finance/converter?a=$amount&from=eur&to=gbp&hl=es" |  sed '/res/!d;s/<[^>]*>//g';)
+echo "$converted_amount"
+}
+
+####################### PROGRAM PROPER ##############################
+
+read -p "CONVERT FROM (usd/gbp/eur/yen): " conv_from
+read -p "CONVERT TO (usd/gbp/eur/yen): " conv_to
+
+if [[ $conv_from == eur && $conv_to == gbp ]]; then
+	euro2pound
+elif  [[ $conv_from == eur && $conv_to == usd ]]; then
+	euro2dollar
+elif  [[ $conv_from == gbp && $conv_to == usd ]]; then
+	pound2dollar
+elif  [[ $conv_from == usd && $conv_to == gbp ]]; then
+	dollar2pound
+elif  [[ $conv_from == gbp && $conv_to == eur ]]; then
+	pound2euro
+elif  [[ $conv_from == usd && $conv_to == eur ]]; then
+	dollar2euro
+elif [[ $conv_from == usd && $conv_to == yen ]]; then
+        dollar2yen
+elif [[ $conv_from == gbp && $conv_to == yen ]]; then
+        pound2yen
+elif [[ $conv_from == eur && $conv_to == yen ]]; then
+        euro2yen
+elif [[ $conv_from == yen && $conv_to == eur ]]; then
+        yen2euro
+elif [[ $conv_from == yen && $conv_to == usd ]]; then
+        yen2dollar
+elif [[ $conv_from == yen && $conv_to == gbp ]]; then
+        yen2pound
+################## 'if' errors start here ######################
+elif  [[ $conv_from == $conv_to ]]; then
+	echo "ERROR: CANNOT CONVERT TO SAME CURRENCY" && sleep 1.5 && exec ./converters/currency_converter
+elif [[ $conv_from != gbp || $conv_from != eur || $conv_from != usd || $conv_from != yen ]]; then
+	echo "ERROR: UNRECOGNIZED CURRENCY. PLEASE SPECIFY USD, EUR, YEN OR GBP IN LOWERCASE" && sleep 1.5 && exec ./converters/currency_converter
+elif [[ $conv_to != gbp || $conv_to != eur || $conv_to != usd || $conv_to != yen ]]; then
+        echo "ERROR: UNRECOGNIZED CURRENCY. PLEASE SPECIFY USD, EUR, YEN OR GBP IN LO
+WERCASE" && sleep 1.5 && exec ./converters/currency_converter
+fi
+

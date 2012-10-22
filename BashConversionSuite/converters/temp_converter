@@ -1,0 +1,40 @@
+#!/bin/bash
+
+VAR1=9
+VAR2=5
+VAR3=32
+
+
+cel2far ()
+{
+clear
+read -p "Enter number in C followed by <ENTER> ==> " resp
+part1=$(echo "scale=2;$VAR1 / $VAR2" | bc)
+part2=$(echo "scale=2;$part1 * $resp" | bc)
+answer_c2f=$(echo "scale2;$part2 + $VAR3" | bc)
+echo "$answer_c2f"
+}
+
+far2cel ()
+{
+clear
+read -p "Enter number in F followed by <ENTER> ==> " resp
+part1=$(echo "scale=2;$resp - $VAR3" | bc)
+part2=$(echo "scale=2;$VAR2 / $VAR1" | bc)
+answer_f2c=$(echo "scale=2;$part2 * $part1" | bc)
+echo "$answer_f2c"
+}
+
+clear
+
+echo "Is your temperature in celsius or farenheit [C/F]?"
+
+read temp_type
+
+if [[ $temp_type == C || $temp_type == c ]]; then
+     cel2far
+elif [[ $temp_type == F || $temp_type == f ]]; then
+     far2cel
+else echo "unrecognized temp format; please type either C or F [caps]"
+fi
+
