@@ -1,5 +1,5 @@
-double cost, paid, change, temp, newChange, changeRemaining
-int loopNumber = 0, amount_of_note_or_coin, special
+double cost, paid, change, temp, newChange, changeRemaining, special
+int loopNumber = 0, amount_of_note_or_coin
 String note_or_coin_name
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 print "Please enter item cost: "
@@ -38,7 +38,4 @@ while (changeRemaining > 0)
     changeRemaining = (changeRemaining - newChange)
 
     print "\n You should receive: $amount_of_note_or_coin $note_or_coin_name"
-    println "\n amount_of_note_or_coin = $amount_of_note_or_coin \n changeRemaining = $changeRemaining \n special = $special"
-   
-    print "\n$changeRemaining"
 }
